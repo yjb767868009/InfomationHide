@@ -1,8 +1,8 @@
-import numpy
+import numpy as np
 import math
 import random
 
-matrix = numpy.zeros([9, 9])
+matrix = np.zeros([9, 9])
 
 
 # 生成一个随机的数组
@@ -10,11 +10,6 @@ def get_random_unit():
     _num_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     random.shuffle(_num_list)
     return _num_list
-
-
-def print_grid(arr):
-    for i in range(9):
-        print(arr[i])
 
 
 def get_row(row):
@@ -68,7 +63,7 @@ def get_enable_arr(row, col):
     return avail_arr
 
 
-def create_matrix():
+def create_base_matrix():
     num_list = get_random_unit()
     for row in range(3):
         for col in range(3):
@@ -115,9 +110,17 @@ def create_matrix():
             matrix[row][col] = enable_arr.pop()
             i += 1
 
+    return matrix - 1
+
+
+def create_matrix():
+    matrix = create_base_matrix()
+    for _ in range(7):
+        matrix = np.vstack((matrix, matrix))
+        matrix = np.hstack((matrix, matrix))
     return matrix
 
 
 if __name__ == '__main__':
-    matrix = create_matrix()
+    matrix = create_base_matrix()
     print(matrix)

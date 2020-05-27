@@ -1,26 +1,33 @@
 from KeyMatrix import create_matrix
 from FileManager import FileManager
-
-
-def nine_hex(x):
-    y = 0
-    i = 0
-    while x > 0:
-        b = x % 9
-        for _ in range(i):
-            b *= 10
-        y = y + b
-        x = int(x / 9)
-        i += 1
-    return y
-
+from InfoHide import hide_info, decode_info
+import time
 
 if __name__ == '__main__':
-    # matrix = create_matrix()
+    matrix_start_time = time.clock()
+    matrix = create_matrix()
+    matrix_end_time = time.clock()
+    print('matrix time')
+    print(matrix_end_time - matrix_start_time)
+
+    start_time = time.clock()
     f = FileManager()
-    f.read_file('1.csv')
+    f.read_file('data1/1.csv')
     f.read_message('message.txt')
-    list = f.message
-    print(list)
-    list_2 = [nine_hex(x) for x in list]
-    print(list_2)
+    end_time = time.clock()
+    print('read time')
+    print(end_time - start_time)
+
+    hide_start_time = time.clock()
+    data = hide_info(f.change_data, f.message, matrix)
+    hide_end_time = time.clock()
+    f.hide_data(data)
+    f.out_file('data1/1-1.csv')
+    print('hide time')
+    print(hide_end_time - hide_start_time)
+
+    start_time = time.clock()
+    decode_info(data, matrix)
+    end_time = time.clock()
+    print('decode time')
+    print(end_time - start_time)
