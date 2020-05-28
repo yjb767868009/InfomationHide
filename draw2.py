@@ -1,3 +1,7 @@
+from pylab import *
+
+mpl.rcParams['font.sans-serif'] = ['SimHei']
+
 import matplotlib.pyplot as plt
 import numpy as np
 import os
@@ -24,6 +28,6 @@ for i in range(6):
     for j in range(6):
         text = ax.text(j, i, round(data[i, j], 2), ha="center", va="center", color="w")
 
-ax.set_title("误差")
+ax.set_title("偏移类型A在两个通道组合后的回归测试误差")
 fig.tight_layout()
 plt.show()
