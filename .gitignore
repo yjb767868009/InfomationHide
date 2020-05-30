@@ -2,5 +2,6 @@
 __pycache__/
 venv/
 data3/*/*/*.csv
+data4/*/*/*.csv
 *.docx
 *.pdf
