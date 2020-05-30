@@ -1,4 +1,5 @@
 from pylab import *
+import pylab
 
 mpl.rcParams['font.sans-serif'] = ['SimHei']
 
@@ -6,13 +7,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
+plt.rcParams['figure.dpi'] = 300
+
 names = ['偏移类型A', '偏移类型B', '偏移类型C']
-x_data = ['原始数据', '随机选择一个通道', '随机选择两个通道', '随机选择三个通道',
-          '随机选择四个通道', '随机选择五个通道', '随机选择六个通道']
+x_data = ['原始数据', '随机选择\n一个通道', '随机选择\n两个通道', '随机选择\n三个通道',
+          '随机选择\n四个通道', '随机选择\n五个通道', '随机选择\n六个通道']
 y_data_a = [1.5296833345, 5.8821194201, 9.9311251705, 13.2545567211, 16.1583804219, 18.6963720674, 20.9256819994]
 y_data_b = [1.0519458345, 8.052032956, 13.9300598136, 18.5221370008, 22.2674455518, 25.873486595, 28.1176530865]
 y_data_c = [1.3366023051, 9.0062213996, 14.9402358476, 19.458342884, 23.1854645188, 26.0981614693, 28.8224985122]
-bar_width = 0.2
+bar_width = 0.3
 index = np.arange(len(x_data))
 
 # 绘制a
@@ -29,7 +32,8 @@ plt.xticks(index + bar_width, x_data)
 def add_labels(rects):
     for rect in rects:
         height = rect.get_height()
-        plt.text(rect.get_x() + rect.get_width() / 2, height + 0.05, '%.2f' % height, ha='center', va='bottom')
+        plt.text(rect.get_x() + rect.get_width() / 2, height + 0.05, '%.2f' % height, ha='center', va='bottom',
+                 fontsize=7)
         # 柱形图边缘用白色填充，纯粹为了美观
         rect.set_edgecolor('white')
 
@@ -41,6 +45,7 @@ add_labels(rects3)
 plt.legend()
 
 plt.xlabel('通道选择数量')
+# xticks(rotation=45)
 plt.ylabel('回归测试误差')
 plt.title('在不同通道数量的情况下回归测试误差')
 

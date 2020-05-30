@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-file_path = os.path.join('data3', 'a', 'd2.txt')
+file_path = os.path.join('data3', 'c', 'd2.txt')
 
 data = []
 with open(file_path)as file:
@@ -26,8 +26,8 @@ ax.set_yticklabels([i for i in range(1, 7)])
 
 for i in range(6):
     for j in range(6):
-        text = ax.text(j, i, round(data[i, j], 2), ha="center", va="center", color="w")
+        text = ax.text(j, i, round(data[i, j], 2), ha="center", va="center", color="w", fontsize=19)
 
-ax.set_title("偏移类型A在两个通道组合后的回归测试误差")
+ax.set_title("偏移类型C在两个通道组合后的回归测试误差")
 fig.tight_layout()
 plt.show()
