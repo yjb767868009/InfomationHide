@@ -8,7 +8,7 @@ for s in ['a', 'b', 'c']:
             change_cols = [x_1, x_2]
             for i in range(5):
 
-                out_file = 'data4/' + s + '/2/' + ''.join(str(x) for x in change_cols) + '-' + str(i) + '.csv'
+                out_file = 'data3/' + s + '/2/' + ''.join(str(x) for x in change_cols) + '-' + str(i) + '.csv'
                 data = []
                 with open(file_name) as file:
                     file_csv = csv.reader(file)
