@@ -26,7 +26,7 @@ saver = tf.train.import_meta_graph(modelpath + 'model.ckpt.meta')
 saver.restore(sess, tf.train.latest_checkpoint(modelpath))
 print(modelpath)
 
-dir = 'data4/c/'
+dir = 'data3/a/'
 
 for xx in range(2, 6):
 
