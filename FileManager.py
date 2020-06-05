@@ -19,7 +19,9 @@ class FileManager(object):
             x = self.all_data[random.randint(0, self.len - 1)][2:]
             l.append([int(a) for a in x])
         l = np.array(l)
-        v = np.var(l, axis=0)
+        v = np.std(l, axis=0)
+        print('fang cha')
+        print(v.tolist())
         t = np.argmax(v)
         return t + 2
 
@@ -72,6 +74,6 @@ class FileManager(object):
 
 if __name__ == '__main__':
     f = FileManager()
-    f.read_file('data1/1.csv')
-    f.read_message('message.txt')
-    print(f.message)
+    f.read_file('data2/a.csv')
+    # f.read_message('message.txt')
+    # print(f.message)

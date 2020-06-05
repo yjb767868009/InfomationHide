@@ -12,14 +12,13 @@ if __name__ == '__main__':
 
     start_time = time.clock()
     f = FileManager()
-    f.read_file('data2/Data0315Mark.csv')
-    f.read_message('tmp.txt')
+    f.read_file('data2/a.csv')
+    f.read_message('message.txt')
     end_time = time.clock()
     print('read time')
     print(end_time - start_time)
 
     hide_start_time = time.clock()
-    data = hide_info(f.change_data, f.message, matrix)
     data = hide_info(f.change_data, f.message, matrix)
 
     hide_end_time = time.clock()
