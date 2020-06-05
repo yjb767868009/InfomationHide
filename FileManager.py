@@ -15,9 +15,11 @@ class FileManager(object):
 
     def find_change_columns(self):
         l = []
-        for _ in range(int(self.len / 10)):
-            x = self.all_data[random.randint(0, self.len - 1)][2:]
-            l.append([int(a) for a in x])
+        # for _ in range(int(self.len / 10)):
+        #     x = self.all_data[random.randint(0, self.len - 1)][2:]
+        #     l.append([int(a) for a in x])
+        for i in range(self.len):
+            l.append([int(a) for a in self.all_data[i][2:]])
         l = np.array(l)
         v = np.std(l, axis=0)
         print('fang cha')
