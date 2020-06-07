@@ -22,7 +22,7 @@ class FileManager(object):
             l.append([int(a) for a in self.all_data[i][2:]])
         l = np.array(l)
         v = np.average(l, axis=0)
-        print('fang cha')
+        print('average')
         print(v.tolist())
         t = np.argmax(v)
         return t + 2

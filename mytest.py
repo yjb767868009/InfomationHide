@@ -13,7 +13,6 @@ import os
 aa = [2]
 outputNodeName = 'outputtttttttt_node'
 namestr = ["1108", "1109", "1110"]
-filerrr = 'data/1/1.csv'  # 数据集的存放位置
 # 加载模型
 
 import tensorflow as tf
@@ -26,9 +25,9 @@ saver = tf.train.import_meta_graph(modelpath + 'model.ckpt.meta')
 saver.restore(sess, tf.train.latest_checkpoint(modelpath))
 print(modelpath)
 
-dir = 'data3/a/'
+dir = 'data3/y/'
 
-for xx in range(2, 6):
+for xx in range(1, 7):
 
     dir_path = dir + str(xx)
     print(dir_path)

@@ -1,7 +1,7 @@
 import csv
 import random
 
-for s in ['a', 'b', 'c']:
+for s in ['x', 'y']:
     file_name = 'data2/' + s + '.csv'
     for x_1 in range(2, 8):
         for x_2 in range(x_1 + 1, 8):

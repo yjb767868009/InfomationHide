@@ -1,7 +1,7 @@
 import csv
 import random
 
-for s in ['a', 'b', 'c']:
+for s in ['x', 'y']:
     file_name = 'data2/' + s + '.csv'
     for x_1 in range(2, 3):
         for x_2 in range(x_1 + 1, 8):
@@ -11,7 +11,7 @@ for s in ['a', 'b', 'c']:
                         change_cols = [x_1, x_2, x_3, x_4, x_5]
                         for i in range(5):
 
-                            out_file = 'data4/' + s + '/5/' + ''.join(str(x) for x in change_cols) + '-' + str(
+                            out_file = 'data3/' + s + '/5/' + ''.join(str(x) for x in change_cols) + '-' + str(
                                 i) + '.csv'
                             data = []
                             with open(file_name) as file:
