@@ -21,7 +21,7 @@ class FileManager(object):
         for i in range(self.len):
             l.append([int(a) for a in self.all_data[i][2:]])
         l = np.array(l)
-        v = np.std(l, axis=0)
+        v = np.average(l, axis=0)
         print('fang cha')
         print(v.tolist())
         t = np.argmax(v)
